@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil Éditorial | Anaëlle Seguin Gosselin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        
+    :root {
+        --bg-light: #fcfaf7;
+        --bg-white: #ffffff;
+        --text-main: #221f1d;
+        --text-muted: #6e655f;
+        --accent-color: #802b18;
+        --border-soft: #dfd7cb;
+        --font-serif: 'Playfair Display', 'Didot', 'Georgia', serif;
+        --font-sans: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: var(--bg-light);
+        color: var(--text-main);
+        font-family: var(--font-sans);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* --- CORRECTION DU HEADER (STYLE RECONSTRUIT) --- */
+    header {
+        background-color: var(--bg-light);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .header-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column; /* Aligne le logo et le menu l'un en dessous de l'autre */
+        align-items: center;
+        padding: 30px 20px 0 20px;
+    }
+
+    .logo-container {
+        text-align: center; /* Centre le texte du logo */
+        margin-bottom: 25px;
+    }
+
+    .logo-main {
+        font-family: var(--font-serif);
+        font-size: 2.2rem; /* Légèrement agrandi pour l'effet magazine */
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--text-main);
+        letter-spacing: -0.5px;
+        display: block;
+    }
+
+    .logo-sub {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--text-muted);
+        margin-top: 5px;
+        font-weight: 600;
+    }
+
+    nav {
+        width: 100%;
+        border-top: 1px solid var(--border-soft);   /* Fine ligne supérieure */
+        border-bottom: 1px solid var(--border-soft);/* Fine ligne inférieure */
+        padding: 14px 0;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center; /* Centre les liens horizontalement */
+        list-style: none;
+        gap: 35px; /* Espace harmonieux entre chaque texte */
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--text-main);
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: color 0.3s ease, border-color 0.3s ease;
+        padding: 4px 0;
+        border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover, nav a.active {
+        color: var(--accent-color);
+        border-bottom: 1px solid var(--accent-color); /* Ligne d'accent sous le lien actif */
+    }
+
+    .burger {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 35px;
+    }
+    
+    .burger div {
+        width: 22px;
+        height: 1.5px;
+        background-color: var(--text-main);
+        margin: 5px;
+        transition: 0.3s;
+    }
+
+    /* --- RESTE DES STYLES CONSERVÉS --- */
+    .section-title-container {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .section-title-container::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 1px;
+        background-color: var(--border-soft);
+        margin: 20px auto 0 auto;
+    }
+
+    .editorial-title {
+        font-family: var(--font-serif);
+        font-size: 2.4rem;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--text-main);
+    }
+
+    .editorial-subtitle {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--text-muted);
+        margin-top: 5px;
+        font-weight: 600;
+    }
+
+    .btn-editorial {
+        display: inline-block;
+        padding: 10px 24px;
+        border: 1px solid var(--text-main);
+        background: transparent;
+        color: var(--text-main);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .btn-editorial:hover {
+        background-color: var(--text-main);
+        color: var(--bg-light);
+    }
+
+    .btn-editorial.btn-accent {
+        border-color: var(--accent-color);
+        color: var(--accent-color);
+    }
+
+    .btn-editorial.btn-accent:hover {
+        background-color: var(--accent-color);
+        color: #ffffff;
+    }
+
+    .grid-2 {
+        display: flex;
+        gap: 40px;
+    }
+    
+    .grid-2 > div {
+        flex: 1;
+    }
+
+    .hero-belletrist { padding: 80px 0 60px 0; background-color: var(--bg-light); }
+    .editorial-badge { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-color); font-weight: 700; display: block; margin-bottom: 15px; }
+    .hero-main-title { font-family: var(--font-serif); font-size: 3.2rem; font-weight: 400; line-height: 1.15; color: var(--text-main); margin-bottom: 25px; }
+    .hero-paragraph { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 35px; max-width: 540px; }
+    .hero-actions { display: flex; gap: 15px; }
+
+    .magazine-frame { border: 1px solid var(--border-soft); padding: 12px; background-color: var(--bg-white); box-shadow: 0 10px 30px rgba(0,0,0,0.02); height: 100%; min-height: 400px; display: flex; }
+    .inner-photo-label { flex: 1; background-color: #f6f1ea; border: 1px solid var(--border-soft); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-style: italic; color: var(--text-muted); }
+
+    .editorial-separation { padding: 40px 0; text-align: center; }
+    .sep-line { height: 1px; background-color: var(--border-soft); width: 100%; max-width: 200px; margin: 0 auto; }
+    .quote-text { font-family: var(--font-serif); font-style: italic; font-size: 1.4rem; padding: 20px 0; color: var(--text-main); }
+
+    .fields-magazine-grid { display: flex; gap: 30px; margin-top: 40px; }
+    .field-item-box { flex: 1; background-color: var(--bg-white); border: 1px solid var(--border-soft); padding: 40px 30px; transition: all 0.3s; }
+    .field-item-box:hover { border-color: var(--text-main); }
+    .field-number { font-family: var(--font-serif); font-style: italic; font-size: 1.8rem; color: var(--accent-color); margin-bottom: 15px; }
+    .field-item-box h3 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 12px; }
+    .field-item-box p { font-size: 0.9rem; color: var(--text-muted); }
+
+    footer {
+        background-color: var(--bg-white);
+        border-top: 1px solid var(--border-soft);
+        padding: 60px 20px;
+        margin-top: 100px;
+    }
+
+    .footer-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .footer-logo {
+        font-family: var(--font-serif);
+        font-size: 1.8rem;
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent-color);
+    }
+
+    .footer-copy {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+    }
+
+    /* --- RESPONSIVE MOBILE SÉCURISÉ --- */
+    @media (max-width: 860px) {
+        .header-inner { 
+            flex-direction: row; 
+            justify-content: space-between; 
+            padding: 20px; 
+        }
+        .logo-container { 
+            text-align: left; 
+            margin-bottom: 0; 
+        }
+        .logo-main { font-size: 1.5rem; }
+        nav { 
+            border: none; 
+            padding: 0; 
+            width: auto;
+        }
+        nav ul {
+            position: fixed;
+            right: -100%;
+            top: 80px;
+            flex-direction: column;
+            background-color: var(--bg-light);
+            width: 100%;
+            text-align: center;
+            padding: 40px 0;
+            gap: 25px;
+            border-bottom: 1px solid var(--border-soft);
+            transition: 0.3s ease;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.02);
+        }
+        nav ul.nav-active { right: 0; }
+        .burger { display: block; }
+        .grid-2 { flex-direction: column; gap: 30px; }
+        .hero-main-title { font-size: 2.3rem; }
+        .fields-magazine-grid { flex-direction: column; }
+    }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo-container">
+                <a href="index.html" class="logo-main">Anaëlle S.G.</a>
+                <div class="logo-sub">Communication, Livre & Valorisation du Patrimoine</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="a-propos.html">À Propos</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="ana-the-books.html">Ana & The Books</a></li>
+                    <li><a href="les-carnets-culturels.html">Les Carnets Culturels</a></li>
+                    <li><a href="collaborations.html">Collaborations</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+<section class="hero-belletrist">
+    <div class="container grid-2">
+        <div class="hero-left-text">
+            <span class="editorial-badge">Créatrice de Contenus Culturels</span>
+            <h1 class="hero-main-title">Au carrefour du livre, du patrimoine et de la médiation numérique.</h1>
+            <p class="hero-paragraph">Je suis <strong>Anaëlle Seguin Gosselin</strong>. Spécialiste de la communication et des stratégies numériques éditoriales, je façonne des passerelles esthétiques et immersives pour connecter les publics aux institutions et univers littéraires.</p>
+            <div class="hero-actions">
+                <a href="a-propos.html" class="btn-editorial">Découvrir mon parcours</a>
+                <a href="portfolio.html" class="btn-editorial btn-accent">Voir mes projets</a>
+            </div>
+        </div>
+        <div class="hero-right-visual">
+            <div class="magazine-frame">
+                <div class="inner-photo-label">[ Portrait Professionnel — Esprit Éditorial ]</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="editorial-separation">
+    <div class="container">
+        <div class="sep-line"></div>
+        <p class="quote-text">"Créer, transmettre et valoriser la culture sous toutes ses formes."</p>
+        <div class="sep-line"></div>
+    </div>
+</section>
+
+<section class="fields-section">
+    <div class="container">
+        <div class="section-title-container">
+            <h2 class="editorial-title">Champs d'Expertise</h2>
+            <div class="editorial-subtitle">Domaines d'activité et savoir-faire</div>
+        </div>
+        
+        <div class="fields-magazine-grid">
+            <div class="field-item-box">
+                <div class="field-number">01</div>
+                <h3>Livre & Littérature</h3>
+                <p>Création de chroniques fouillées, partenariats avec les maisons d'édition et promotion active de la lecture auprès des communautés web.</p>
+            </div>
+            <div class="field-item-box">
+                <div class="field-number">02</div>
+                <h3>Patrimoine & Culture</h3>
+                <p>Mise en valeur d'édifices d'exception, réalisation de reportages photographiques soignés et scénarisation de visites guidées immersives.</p>
+            </div>
+            <div class="field-item-box">
+                <div class="field-number">03</div>
+                <h3>Médiation Numérique</h3>
+                <p>Conception d'outils digitaux interactifs, de formats éditoriaux web innovants et de stratégies de diffusion transmédia d'envergure.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">Anaëlle Seguin Gosselin</div>
+            <div class="footer-links">
+    <a href="https://www.instagram.com/ana_andthebooks/" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@ana_andthebooks" target="_blank">TikTok</a>
+    <a href="https://www.youtube.com/@ana_andthebooks" target="_blank">YouTube</a>
+    <a href="https://www.linkedin.com/in/ana%C3%ABlle-seguin-gosselin-884b09291/" target="_blank">LinkedIn</a>
+</div>
+            <p class="footer-copy">&copy; 2026 — Créer, transmettre et valoriser la culture sous toutes ses formes.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('nav ul');
+        if (burger) {
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                burger.classList.toggle('toggle');
+            });
+        }
+    });
+    </script>
+</body>
+</html>
