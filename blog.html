@@ -6,273 +6,310 @@
     <title>Magazine Blog | Anaëlle Seguin Gosselin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        
-    :root {
-        --bg-light: #fcfaf7;
-        --bg-white: #ffffff;
-        --text-main: #221f1d;
-        --text-muted: #6e655f;
-        --accent-color: #802b18;
-        --border-soft: #dfd7cb;
-        --font-serif: 'Playfair Display', 'Didot', 'Georgia', serif;
-        --font-sans: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', sans-serif;
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        background-color: var(--bg-light);
-        color: var(--text-main);
-        font-family: var(--font-sans);
-        line-height: 1.65;
-        -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-        max-width: 1140px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    /* --- RESTRUCTURATION COMPLÈTE DU MENU ÉDITORIAL CENTRÉ --- */
-    header {
-        background-color: var(--bg-light);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-
-    .header-inner {
-        max-width: 1140px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 35px 20px 0 20px;
-    }
-
-    .logo-container {
-        text-align: center;
-        margin-bottom: 25px;
-    }
-
-    .logo-main {
-        font-family: var(--font-serif);
-        font-size: 2.3rem;
-        font-weight: 700;
-        text-decoration: none;
-        color: var(--text-main);
-        letter-spacing: -0.5px;
-        display: block;
-    }
-
-    .logo-sub {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: var(--text-muted);
-        margin-top: 6px;
-        font-weight: 600;
-    }
-
-    nav {
-        width: 100%;
-        border-top: 1px solid var(--border-soft);
-        border-bottom: 1px solid var(--border-soft);
-        padding: 15px 0;
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        gap: 35px;
-        flex-wrap: wrap;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: var(--text-main);
-        font-size: 0.8rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        transition: color 0.3s ease, border-color 0.3s ease;
-        padding: 4px 0;
-        border-bottom: 1px solid transparent;
-    }
-
-    nav a:hover, nav a.active {
-        color: var(--accent-color);
-        border-bottom: 1px solid var(--accent-color);
-    }
-
-    .burger {
-        display: none;
-        cursor: pointer;
-        position: absolute;
-        right: 20px;
-        top: 38px;
-    }
-    
-    .burger div {
-        width: 22px;
-        height: 1.5px;
-        background-color: var(--text-main);
-        margin: 5px;
-        transition: 0.3s;
-    }
-
-    /* --- DESIGNS INTERNES DE LA PAGE --- */
-    .section-title-container {
-        text-align: center;
-        margin-bottom: 50px;
-        position: relative;
-    }
-
-    .section-title-container::after {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 1px;
-        background-color: var(--border-soft);
-        margin: 20px auto 0 auto;
-    }
-
-    .editorial-title {
-        font-family: var(--font-serif);
-        font-size: 2.4rem;
-        font-weight: 400;
-        font-style: italic;
-        color: var(--text-main);
-    }
-
-    .editorial-subtitle {
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: var(--text-muted);
-        margin-top: 5px;
-        font-weight: 600;
-    }
-
-    .grid-2 {
-        display: flex;
-        gap: 40px;
-    }
-    
-    .grid-2 > div {
-        flex: 1;
-    }
-
-    .blog-magazine-layout { display: flex; gap: 50px; }
-    .left-posts-feed { flex: 1.8; }
-    .right-magazine-sidebar { flex: 1; }
-
-    .magazine-article-preview { background-color: var(--bg-white); border: 1px solid var(--border-soft); padding: 40px; margin-bottom: 30px; }
-    .preview-cat { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-color); font-weight: 700; display: block; margin-bottom: 12px; }
-    .magazine-article-preview h3 { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 15px; line-height: 1.25; }
-    .magazine-article-preview p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 25px; }
-    .preview-link { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--text-main); text-decoration: none; }
-    .preview-link:hover { color: var(--accent-color); }
-
-    .sidebar-sticky-card { background: var(--bg-white); border: 1px solid var(--border-soft); padding: 30px; position: sticky; top: 120px; }
-    .sidebar-sticky-card h4 { font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 8px; border-bottom: 1px solid var(--border-soft); }
-    .sb-categories { list-style: none; }
-    .sb-categories li { margin-bottom: 15px; }
-    .sb-categories a { text-decoration: none; color: var(--text-main); font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
-    .sb-categories a span { display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 400; margin-top: 2px; }
-    .sb-categories a:hover { color: var(--accent-color); }
-
-    footer {
-        background-color: var(--bg-white);
-        border-top: 1px solid var(--border-soft);
-        padding: 60px 20px;
-        margin-top: 100px;
-    }
-
-    .footer-inner {
-        max-width: 1140px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .footer-logo {
-        font-family: var(--font-serif);
-        font-size: 1.8rem;
-        font-style: italic;
-        margin-bottom: 20px;
-    }
-
-    .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-bottom: 30px;
-    }
-
-    .footer-links a {
-        color: var(--text-muted);
-        text-decoration: none;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .footer-links a:hover {
-        color: var(--accent-color);
-    }
-
-    .footer-copy {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        letter-spacing: 0.5px;
-    }
-
-    /* --- MEDIA QUERIES RESPONSIVE MOBILE --- */
-    @media (max-width: 900px) {
-        .header-inner { 
-            flex-direction: row; 
-            justify-content: space-between; 
-            padding: 20px; 
+        :root {
+            --reseda-green: #6D6943;
+            --reseda-dark: #4E4A2E;
+            --van-dyke: #48372F;
+            --isabelline: #F4F3EE;
+            --pink-lavender: #C8A1B1;
+            --border-soft: rgba(72, 55, 47, 0.2);
+            --shadow-premium: 0 12px 35px rgba(72, 55, 47, 0.08);
         }
-        .logo-container { 
-            text-align: left; 
-            margin-bottom: 0; 
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        .logo-main { font-size: 1.5rem; }
-        nav { 
-            border: none; 
-            padding: 0; 
-            width: auto;
+
+        body {
+            background-color: var(--isabelline);
+            color: var(--van-dyke);
+            font-family: 'Arial Nova', 'Arial', sans-serif;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
         }
-        nav ul {
-            position: fixed;
-            right: -100%;
-            top: 80px;
-            flex-direction: column;
-            background-color: var(--bg-light);
-            width: 100%;
-            text-align: center;
-            padding: 40px 0;
-            gap: 25px;
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--isabelline);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             border-bottom: 1px solid var(--border-soft);
-            transition: 0.3s ease;
-            box-shadow: 0 10px 15px rgba(0,0,0,0.02);
         }
-        nav ul.nav-active { right: 0; }
-        .burger { display: block; }
-        .blog-magazine-layout { flex-direction: column; } 
-        .right-magazine-sidebar { order: -1; } 
-        .sidebar-sticky-card { position: static; }
-    }
 
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 35px 20px 15px 20px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo-main {
+            font-family: 'DM Serif Display', serif;
+            font-style: italic;
+            font-size: 2.5rem;
+            text-decoration: none;
+            color: var(--van-dyke);
+            letter-spacing: -0.5px;
+            display: block;
+        }
+
+        .logo-sub {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--van-dyke);
+            opacity: 0.8;
+            margin-top: 6px;
+            font-weight: 700;
+        }
+
+        nav {
+            width: 100%;
+            padding-top: 15px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--van-dyke);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--reseda-dark);
+            border-bottom: 2px solid var(--reseda-dark);
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 38px;
+        }
+        
+        .burger div {
+            width: 22px;
+            height: 2px;
+            background-color: var(--van-dyke);
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        /* Petite touche de rose via la bordure supérieure de l'en-tête de section */
+        .section-title-container {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            background-color: #ffffff;
+            border: 1px solid var(--border-soft);
+            border-top: 4px solid var(--pink-lavender); /* Ligne décorative rose subtile */
+            border-radius: 24px;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .section-title-container::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--reseda-green); /* Intégration du #6D6943 */
+            margin: 20px auto 0 auto;
+        }
+
+        .editorial-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.6rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--van-dyke);
+        }
+
+        .editorial-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--reseda-dark);
+            margin-top: 5px;
+            font-weight: 700;
+        }
+
+        .grid-2 {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .grid-2 > div {
+            flex: 1;
+        }
+
+        .blog-magazine-layout { display: flex; gap: 50px; }
+        .left-posts-feed { flex: 1.8; }
+        .right-magazine-sidebar { flex: 1; }
+
+        .magazine-article-preview { background-color: #ffffff; border: 1px solid var(--border-soft); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: var(--shadow-premium); transition: all 0.3s ease; }
+        .magazine-article-preview:hover { border-color: rgba(72, 55, 47, 0.3); }
+        .preview-cat { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--reseda-dark); font-weight: 800; display: block; margin-bottom: 12px; }
+        .magazine-article-preview h3 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 15px; line-height: 1.25; color: var(--van-dyke); }
+        .magazine-article-preview p { font-size: 0.95rem; color: var(--van-dyke); opacity: 0.85; margin-bottom: 25px; }
+        
+        /* Transformation des boutons de flux en boutons roses pleins avec écriture brune */
+        .preview-link { 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            font-weight: 800; 
+            background-color: var(--pink-lavender); /* Fond plein rose */
+            color: var(--van-dyke); /* Écriture brune contrastée */
+            text-decoration: none; 
+            padding: 10px 24px;
+            border: 1px solid rgba(72, 55, 47, 0.1);
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 12px rgba(200, 161, 177, 0.3);
+        }
+        .preview-link:hover { 
+            background-color: var(--van-dyke); 
+            color: var(--isabelline);
+            box-shadow: 0 6px 15px rgba(72, 55, 47, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Touche de rose ajoutée sur la bordure supérieure de la carte latérale */
+        .sidebar-sticky-card { 
+            background: #ffffff; 
+            border: 1px solid var(--border-soft); 
+            border-top: 4px solid var(--pink-lavender); /* Ligne décorative rose subtile */
+            padding: 30px; 
+            position: sticky; 
+            top: 120px; 
+            border-radius: 20px; 
+            box-shadow: var(--shadow-premium); 
+        }
+        .sidebar-sticky-card h4 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 8px; border-bottom: 1px solid var(--border-soft); color: var(--van-dyke); }
+        .sb-categories { list-style: none; }
+        .sb-categories li { margin-bottom: 15px; }
+        .sb-categories a { text-decoration: none; color: var(--van-dyke); font-size: 0.95rem; font-weight: 700; transition: color 0.2s; display: block; }
+        .sb-categories a span { display: block; font-size: 0.75rem; color: var(--van-dyke); opacity: 0.6; font-weight: 400; margin-top: 2px; text-transform: none; letter-spacing: 0; }
+        .sb-categories a:hover { color: var(--reseda-green); } /* Passage au vert #6D6943 au survol */
+
+        footer {
+            background-color: #ffffff;
+            border-top: 1px solid var(--border-soft);
+            padding: 60px 20px;
+            margin-top: 100px;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--van-dyke);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: var(--van-dyke);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            color: var(--reseda-green);
+            opacity: 1;
+        }
+
+        .footer-copy {
+            font-size: 0.75rem;
+            color: var(--van-dyke);
+            opacity: 0.7;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 900px) {
+            .header-inner { 
+                flex-direction: row; 
+                justify-content: space-between; 
+                padding: 20px; 
+            }
+            .logo-container { 
+                text-align: left; 
+                margin-bottom: 0; 
+            }
+            .logo-main { font-size: 1.8rem; }
+            nav { 
+                border: none; 
+                padding: 0; 
+                width: auto;
+            }
+            nav ul {
+                position: fixed;
+                right: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: var(--isabelline);
+                width: 100%;
+                text-align: center;
+                padding: 40px 0;
+                gap: 25px;
+                border-bottom: 1px solid var(--border-soft);
+                transition: 0.3s ease;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.02);
+            }
+            nav ul.nav-active { right: 0; }
+            .burger { display: block; }
+            .blog-magazine-layout { flex-direction: column; } 
+            .right-magazine-sidebar { order: -1; } 
+            .sidebar-sticky-card { position: static; }
+        }
     </style>
 </head>
 <body>
@@ -304,57 +341,55 @@
     </header>
 
     <main>
-        
-<section class="blog-belletrist">
-    <div class="container">
-        <div class="section-title-container">
-            <h2 class="editorial-title">Le Magazine Culturel</h2>
-            <div class="editorial-subtitle">Réflexions et analyses universitaires</div>
-        </div>
+        <section class="blog-belletrist">
+            <div class="container">
+                <div class="section-title-container">
+                    <h2 class="editorial-title">Le Magazine Culturel</h2>
+                    <div class="editorial-subtitle">Réflexions et analyses universitaires</div>
+                </div>
 
-        <div class="grid-2 blog-magazine-layout">
-            <div class="left-posts-feed">
-                <article class="magazine-article-preview">
-                    <span class="preview-cat">Livres / Chroniques et sélections</span>
-                    <h3>Analyse critique des structures narratives contemporaines</h3>
-                    <p>Une immersion approfondie au sein des catalogues de la rentrée littéraire. Décryptage des lignes directrices thématiques et de l'impact des relais d'influence numériques sur l'économie globale du livre...</p>
-                    <a href="#" class="preview-link">Lire la note de fond &rarr;</a>
-                </article>
+                <div class="grid-2 blog-magazine-layout">
+                    <div class="left-posts-feed">
+                        <article class="magazine-article-preview">
+                            <span class="preview-cat">Livres / Chroniques et sélections</span>
+                            <h3>Analyse critique des structures narratives contemporaines</h3>
+                            <p>Une immersion approfondie au sein des catalogues de la rentrée littéraire. Décryptage des lignes directrices thématiques et de l'impact des relais d'influence numériques sur l'économie globale du livre...</p>
+                            <a href="#" class="preview-link">Lire la note de fond &rarr;</a>
+                        </article>
 
-                <article class="magazine-article-preview">
-                    <span class="preview-cat">Patrimoine / Médiation culturelle</span>
-                    <h3>L'Ancien Grand Séminaire : Enjeux de la médiation numérique in situ</h3>
-                    <p>Réflexion professionnelle sur l'apport des outils interactifs de guidage dans la réappropriation des monuments historiques fermés au public. Étude des typologies de parcours et des attentes des usagers scolaires...</p>
-                    <a href="#" class="preview-link">Lire la note de fond &rarr;</a>
-                </article>
-            </div>
-            
-            <div class="right-magazine-sidebar">
-                <div class="sidebar-sticky-card">
-                    <h4>Catégories Éditoriales</h4>
-                    <ul class="sb-categories">
-                        <li><a href="#">Livres <span>(Chroniques & Sélections)</span></a></li>
-                        <li><a href="#">Culture <span>(Événements & Découvertes)</span></a></li>
-                        <li><a href="#">Patrimoine <span>(Lieux visités & Valorisation)</span></a></li>
-                        <li><a href="#">Médiation Culturelle <span>(Réflexions)</span></a></li>
-                    </ul>
+                        <article class="magazine-article-preview">
+                            <span class="preview-cat">Patrimoine / Médiation culturelle</span>
+                            <h3>L'Ancien Grand Séminaire : Enjeux de la médiation numérique in situ</h3>
+                            <p>Réflexion professionnelle sur l'apport des outils interactifs de guidage dans la réappropriation des monuments historiques fermés au public. Étude des typologies de parcours et des attentes des usagers scolaires...</p>
+                            <a href="#" class="preview-link">Lire la note de fond &rarr;</a>
+                        </article>
+                    </div>
+                    
+                    <div class="right-magazine-sidebar">
+                        <div class="sidebar-sticky-card">
+                            <h4>Catégories Éditoriales</h4>
+                            <ul class="sb-categories">
+                                <li><a href="#">Livres <span>(Chroniques & Sélections)</span></a></li>
+                                <li><a href="#">Culture <span>(Événements & Découvertes)</span></a></li>
+                                <li><a href="#">Patrimoine <span>(Lieux visités & Valorisation)</span></a></li>
+                                <li><a href="#">Médiation Culturelle <span>(Réflexions)</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
+        </section>
     </main>
 
     <footer>
         <div class="footer-inner">
             <div class="footer-logo">Anaëlle Seguin Gosselin</div>
             <div class="footer-links">
-    <a href="https://www.instagram.com/ana_andthebooks/" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/@ana_andthebooks" target="_blank">TikTok</a>
-    <a href="https://www.youtube.com/@ana_andthebooks" target="_blank">YouTube</a>
-    <a href="https://www.linkedin.com/in/ana%C3%ABlle-seguin-gosselin-884b09291/" target="_blank">LinkedIn</a>
-</div>
+                <a href="https://www.instagram.com/ana_andthebooks/" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@ana_andthebooks" target="_blank">TikTok</a>
+                <a href="https://www.youtube.com/@ana_andthebooks" target="_blank">YouTube</a>
+                <a href="https://www.linkedin.com/in/ana%C3%ABlle-seguin-gosselin-884b09291/" target="_blank">LinkedIn</a>
+            </div>
             <p class="footer-copy">&copy; 2026 — Créer, transmettre et valoriser la culture sous toutes ses formes.</p>
         </div>
     </footer>
