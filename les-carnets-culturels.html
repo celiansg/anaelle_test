@@ -126,13 +126,12 @@
             transition: 0.3s;
         }
 
-        /* Retour au fond blanc épuré avec juste une ligne rose en petite touche au-dessus */
         .brand-editorial-header { 
             text-align: center; 
             padding: 50px 20px; 
             background-color: #ffffff; 
             border: 1px solid var(--border-soft); 
-            border-top: 4px solid var(--pink-lavender); /* Petite touche décorative rose */
+            border-top: 4px solid var(--pink-lavender); 
             margin-bottom: 50px; 
             border-radius: 24px; 
             box-shadow: var(--shadow-premium); 
@@ -156,7 +155,6 @@
             color: var(--van-dyke); 
         }
         
-        /* Séparateur discret vert reseda */
         .brand-divider { 
             width: 40px; 
             height: 2px; 
@@ -171,22 +169,29 @@
         .g-img { height: 200px; background-color: rgba(72,55,47,0.03); display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'DM Serif Display', serif; font-style: italic; color: var(--van-dyke); opacity: 0.8; padding: 15px; font-size: 1rem; border-radius: 12px; }
         .g-info { padding: 15px 5px 5px 5px; text-align: center; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--van-dyke); }
 
-        .belletrist-map-container { background-color: #ffffff; border: 1px solid var(--border-soft); padding: 50px 40px; text-align: center; border-radius: 24px; box-shadow: var(--shadow-premium); }
+        /* NOUVEAU STYLE : Grande bande de couleur verte pour envelopper la carte */
+        .carnets-map-section {
+            padding: 80px 0;
+            background-color: var(--reseda-green);
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .belletrist-map-container { background-color: #ffffff; border: 1px solid var(--border-soft); padding: 50px 40px; text-align: center; border-radius: 24px; box-shadow: var(--shadow-premium); color: var(--van-dyke); }
         .map-title { font-family: 'DM Serif Display', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 5px; color: var(--van-dyke); }
         .map-subtitle { font-size: 0.95rem; color: var(--van-dyke); opacity: 0.7; margin-bottom: 30px; }
-        .interactive-canvas { height: 380px; background-color: rgba(72,55,47,0.02); border: 1px solid var(--border-soft); position: relative; display: flex; align-items: center; justify-content: center; border-radius: 16px; }
+        .interactive-canvas { height: 380px; background-color: rgba(72,55,47,0.05); border: 1px solid var(--border-soft); position: relative; display: flex; align-items: center; justify-content: center; border-radius: 16px; }
         .canvas-label { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--van-dyke); opacity: 0.6; font-size: 0.95rem; }
 
         .map-hotspot { position: absolute; cursor: pointer; }
         .map-hotspot .dot { font-size: 2.5rem; color: var(--reseda-green); line-height: 0; }
         
-        /* Deuxième petite touche rose : le liseré de contour fin autour des cartes d'informations de la carte */
         .popover { 
             display: none; 
             position: absolute; 
             background: var(--van-dyke); 
             color: var(--isabelline); 
-            border: 1px solid var(--pink-lavender); /* Liseré subtil rose */
+            border: 1px solid var(--pink-lavender); 
             padding: 6px 12px; 
             font-size: 0.75rem; 
             text-transform: uppercase; 
@@ -205,7 +210,6 @@
             background-color: #ffffff;
             border-top: 1px solid var(--border-soft);
             padding: 60px 20px;
-            margin-top: 100px;
         }
 
         .footer-inner {
@@ -284,6 +288,7 @@
             nav ul.nav-active { right: 0; }
             .burger { display: block; }
             .editorial-gallery { flex-direction: column; }
+            .carnets-map-section { padding: 50px 0; }
         }
     </style>
 </head>
@@ -342,10 +347,14 @@
                         <div class="g-info">Médiation Culturelle de Territoire</div>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <section class="carnets-map-section">
+            <div class="container">
                 <div class="belletrist-map-container">
                     <h3 class="map-title">Carte Interactive des Explorations</h3>
-                    <p class="map-subtitle">Survolez les points ancrés pour visualiser géographiquement les institutions valorisées.</p>
+                    <p class="map-subtitle">Survolez les points ancrés pour visualiser géographiquement les institutions culturelles valorisées.</p>
                     
                     <div class="interactive-canvas">
                         <div class="map-hotspot" style="top: 38%; left: 42%;">

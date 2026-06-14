@@ -14,8 +14,9 @@
             --van-dyke: #48372F;
             --isabelline: #F4F3EE;
             --pink-lavender: #C8A1B1;
-            --border-soft: rgba(72, 55, 47, 0.2);
-            --shadow-premium: 0 12px 35px rgba(72, 55, 47, 0.08);
+            --border-soft: rgba(72, 55, 47, 0.15);
+            --border-light: rgba(255, 255, 255, 0.2);
+            --shadow-premium: 0 12px 35px rgba(72, 55, 47, 0.06);
         }
 
         * {
@@ -38,6 +39,7 @@
             padding: 0 20px;
         }
 
+        /* --- HEADER & NAVIGATION --- */
         header {
             background-color: var(--isabelline);
             position: sticky;
@@ -60,7 +62,6 @@
             margin-bottom: 25px;
         }
 
-        /* Application stricte de la police de titre en haut */
         .logo-main {
             font-family: 'DM Serif Display', serif;
             font-style: italic;
@@ -127,39 +128,7 @@
             transition: 0.3s;
         }
 
-        .section-title-container {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title-container::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: var(--reseda-green);
-            margin: 20px auto 0 auto;
-        }
-
-        .editorial-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 2.6rem;
-            font-weight: 400;
-            font-style: italic;
-            color: var(--van-dyke);
-        }
-
-        .editorial-subtitle {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--reseda-dark);
-            margin-top: 6px;
-            font-weight: 800;
-        }
-
-        /* Bouton secondaire */
+        /* --- BOUTONS --- */
         .btn-editorial {
             display: inline-block;
             padding: 12px 30px;
@@ -182,33 +151,37 @@
             color: var(--isabelline);
         }
 
-        /* Bouton principal plein pour un fort contraste */
         .btn-editorial.btn-accent {
             background-color: var(--reseda-green);
             border-color: var(--reseda-green);
             color: #ffffff;
-            box-shadow: 0 6px 15px rgba(109, 105, 67, 0.3);
+            box-shadow: 0 6px 15px rgba(109, 105, 67, 0.2);
         }
 
         .btn-editorial.btn-accent:hover {
             background-color: var(--reseda-dark);
             border-color: var(--reseda-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(109, 105, 67, 0.4);
+            box-shadow: 0 8px 20px rgba(109, 105, 67, 0.3);
         }
 
+        /* --- DESIGN DES BANDES ET LAYOUTS --- */
         .grid-2 {
             display: flex;
-            gap: 40px;
+            gap: 50px;
+            align-items: center;
         }
         
         .grid-2 > div {
             flex: 1;
         }
 
-        .hero-belletrist { padding: 80px 0 60px 0; }
-        
-        /* Badge rehaussé */
+        /* BANDE UNIQUE 1 : HERO (FOND LUMINEUX CLASSIQUE) */
+        .hero-section {
+            padding: 90px 0 70px 0;
+            background-color: var(--isabelline);
+        }
+
         .editorial-badge { 
             font-size: 0.75rem; 
             text-transform: uppercase; 
@@ -226,25 +199,78 @@
         .hero-paragraph { font-size: 1.1rem; color: var(--van-dyke); opacity: 0.85; margin-bottom: 35px; max-width: 540px; }
         .hero-actions { display: flex; gap: 15px; }
 
-        .magazine-frame { border: 1px solid var(--border-soft); padding: 12px; background-color: #ffffff; box-shadow: var(--shadow-premium); height: 100%; min-height: 400px; display: flex; border-radius: 20px; }
+        .magazine-frame { border: 1px solid var(--border-soft); padding: 12px; background-color: #ffffff; box-shadow: var(--shadow-premium); height: 100%; min-height: 420px; display: flex; border-radius: 20px; }
         .inner-photo-label { flex: 1; background-color: rgba(72, 55, 47, 0.03); border: 1px solid var(--border-soft); display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-style: italic; color: var(--van-dyke); opacity: 0.7; border-radius: 12px; }
 
-        .editorial-separation { padding: 40px 0; text-align: center; }
-        .sep-line { height: 1px; background-color: var(--border-soft); width: 100%; max-width: 200px; margin: 0 auto; }
-        .quote-text { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.6rem; padding: 20px 0; color: var(--van-dyke); }
+        /* BANDE UNIQUE 2 : SEPARATION CITATION (FOND TEXTURE DOUX GRIS/BEIGE) */
+        .editorial-separation { 
+            padding: 60px 0; 
+            text-align: center; 
+            background-color: #eae6de; /* Nouvelle bande de couleur subtile en arrière-plan */
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+        .sep-line { height: 1px; background-color: var(--van-dyke); opacity: 0.2; width: 100%; max-width: 200px; margin: 0 auto; }
+        .quote-text { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.8rem; padding: 25px 0; color: var(--van-dyke); }
+
+        /* BANDE UNIQUE 3 : EXPERTISE (FOND DE COULEUR VERT RESEDA POUR CONSTRASTE FORT) */
+        .fields-section { 
+            padding: 90px 0; 
+            background-color: var(--reseda-green); /* Remplacement par une large bande colorée */
+            color: #ffffff;
+        }
+
+        .section-title-container {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        /* Ajustement des couleurs de titres pour se détacher sur le fond vert */
+        .fields-section .editorial-title {
+            color: #ffffff;
+        }
+
+        .fields-section .editorial-subtitle {
+            color: #ffffff;
+            opacity: 0.9;
+        }
+
+        .fields-section .section-title-container::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--pink-lavender);
+            margin: 20px auto 0 auto;
+        }
 
         .fields-magazine-grid { display: flex; gap: 30px; margin-top: 40px; }
-        .field-item-box { flex: 1; background-color: #ffffff; border: 1px solid var(--border-soft); padding: 40px 30px; border-radius: 24px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: var(--shadow-premium); }
-        .field-item-box:hover { border-color: var(--reseda-green); transform: translateY(-6px); box-shadow: 0 20px 40px rgba(72, 55, 47, 0.12); }
-        .field-number { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 2.2rem; color: var(--reseda-green); margin-bottom: 15px; font-weight: bold; }
-        .field-item-box h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 12px; color: var(--van-dyke); }
+        
+        .field-item-box { 
+            flex: 1; 
+            background-color: #ffffff; 
+            border: 1px solid transparent; 
+            padding: 45px 35px; 
+            border-radius: 24px; 
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+            box-shadow: 0 15px 35px rgba(42, 40, 25, 0.15); 
+        }
+        
+        .field-item-box:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 25px 50px rgba(42, 40, 25, 0.25); 
+        }
+        
+        .field-number { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 2.4rem; color: var(--reseda-green); margin-bottom: 15px; font-weight: bold; }
+        .field-item-box h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 15px; color: var(--van-dyke); }
         .field-item-box p { font-size: 0.95rem; color: var(--van-dyke); opacity: 0.85; }
 
+        /* --- FOOTER --- */
         footer {
             background-color: #ffffff;
             border-top: 1px solid var(--border-soft);
             padding: 60px 20px;
-            margin-top: 100px;
         }
 
         .footer-inner {
@@ -276,6 +302,7 @@
             letter-spacing: 1px;
             font-weight: 700;
             opacity: 0.8;
+            transition: all 0.3s ease;
         }
 
         .footer-links a:hover {
@@ -290,7 +317,8 @@
             letter-spacing: 0.5px;
         }
 
-        @media (max-width: 860px) {
+        /* --- DISPOSITIFS MOBILES & TABLETTES --- */
+        @media (max-width: 900px) {
             .header-inner { 
                 flex-direction: row; 
                 justify-content: space-between; 
@@ -322,9 +350,12 @@
             }
             nav ul.nav-active { right: 0; }
             .burger { display: block; }
-            .grid-2 { flex-direction: column; gap: 30px; }
-            .hero-main-title { font-size: 2.3rem; }
-            .fields-magazine-grid { flex-direction: column; }
+            .grid-2 { flex-direction: column; gap: 40px; }
+            .hero-section { padding: 50px 0; }
+            .hero-main-title { font-size: 2.4rem; }
+            .magazine-frame { min-height: 350px; }
+            .fields-magazine-grid { flex-direction: column; gap: 25px; }
+            .fields-section { padding: 60px 0; }
         }
     </style>
 </head>
@@ -357,7 +388,7 @@
     </header>
 
     <main>
-        <section class="hero-belletrist">
+        <section class="hero-section">
             <div class="container grid-2">
                 <div class="hero-left-text">
                     <span class="editorial-badge">Créatrice de Contenus Culturels</span>
@@ -395,7 +426,7 @@
                     <div class="field-item-box">
                         <div class="field-number">01</div>
                         <h3>Livre & Littérature</h3>
-                        <p>Création de chroniques foulettes, partenariats avec les maisons d'édition et promotion active de la lecture auprès des communautés web.</p>
+                        <p>Création de chroniques fouillées, partenariats avec les maisons d'édition et promotion active de la lecture auprès des communautés web.</p>
                     </div>
                     <div class="field-item-box">
                         <div class="field-number">02</div>

@@ -14,8 +14,9 @@
             --van-dyke: #48372F;
             --isabelline: #F4F3EE;
             --pink-lavender: #C8A1B1;
-            --border-soft: rgba(72, 55, 47, 0.2);
-            --shadow-premium: 0 12px 35px rgba(72, 55, 47, 0.08);
+            --border-soft: rgba(72, 55, 47, 0.15);
+            --border-light: rgba(255, 255, 255, 0.2);
+            --shadow-premium: 0 12px 35px rgba(72, 55, 47, 0.06);
         }
 
         * {
@@ -38,6 +39,7 @@
             padding: 0 20px;
         }
 
+        /* --- HEADER & NAVIGATION --- */
         header {
             background-color: var(--isabelline);
             position: sticky;
@@ -52,7 +54,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 35px 20px 15px 20px;
+            padding: 30px 20px 15px 20px;
         }
 
         .logo-container {
@@ -63,7 +65,7 @@
         .logo-main {
             font-family: 'DM Serif Display', serif;
             font-style: italic;
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             text-decoration: none;
             color: var(--van-dyke);
             letter-spacing: -0.5px;
@@ -115,7 +117,7 @@
             cursor: pointer;
             position: absolute;
             right: 20px;
-            top: 38px;
+            top: 35px;
         }
         
         .burger div {
@@ -126,16 +128,11 @@
             transition: 0.3s;
         }
 
-        /* Touche de rose subtile via la bordure supérieure de l'en-tête de section */
+        /* --- DESIGNS INTERNES INTERNES --- */
         .section-title-container {
             text-align: center;
-            padding: 40px 20px 20px 20px;
-            background-color: #ffffff;
-            border: 1px solid var(--border-soft);
-            border-top: 4px solid var(--pink-lavender); /* Ligne rose */
-            border-radius: 24px;
             margin-bottom: 50px;
-            box-shadow: var(--shadow-premium);
+            position: relative;
         }
 
         .section-title-container::after {
@@ -143,7 +140,7 @@
             display: block;
             width: 50px;
             height: 2px;
-            background-color: var(--reseda-green); /* Intégration du #6D6943 */
+            background-color: var(--reseda-green);
             margin: 20px auto 0 auto;
         }
 
@@ -160,62 +157,107 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--reseda-dark);
-            margin-top: 5px;
-            font-weight: 700;
+            margin-top: 6px;
+            font-weight: 800;
         }
 
         .grid-2 {
             display: flex;
             gap: 40px;
+            align-items: flex-start;
         }
         
         .grid-2 > div {
             flex: 1;
         }
 
-        .about-belletrist { padding: 60px 0; }
-        .profile-block { margin-bottom: 80px; }
-        .block-serif-title { font-family: 'DM Serif Display', serif; font-size: 2rem; font-weight: 400; margin-bottom: 20px; line-height: 1.3; color: var(--van-dyke); }
-        .profile-text-left p { margin-bottom: 20px; color: var(--van-dyke); opacity: 0.85; font-size: 1rem; }
-
-        /* Petite touche de rose sur le côté de la carte des valeurs */
-        .values-card-minimal { 
-            border: 1px solid var(--border-soft); 
-            border-left: 4px solid var(--pink-lavender); /* Liseré rose vertical */
-            background-color: #ffffff; 
-            padding: 35px; 
-            border-radius: 24px; 
-            box-shadow: var(--shadow-premium); 
+        /* BANDE 1 : PROFIL & VALEURS (LUMINEUX ISABELLINE) */
+        .about-profile-section {
+            padding: 80px 0;
+            background-color: var(--isabelline);
         }
-        .values-card-minimal h4 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; color: var(--van-dyke); }
-        .values-card-minimal ul { list-style: none; }
-        .values-card-minimal li { margin-bottom: 15px; font-size: 0.95rem; color: var(--van-dyke); opacity: 0.9; }
-        .values-card-minimal li span { color: var(--reseda-dark); font-weight: 700; display: inline-block; margin-right: 5px; }
 
-        .timeline-main-heading { font-family: 'DM Serif Display', serif; font-size: 2.2rem; font-weight: 400; text-align: center; margin-bottom: 40px; color: var(--van-dyke); }
-        .magazine-timeline { border-top: 1px solid var(--border-soft); }
-        .timeline-row { display: flex; border-bottom: 1px solid var(--border-soft); padding: 30px 0; transition: all 0.3s; }
-        .timeline-row:hover { background-color: rgba(255,255,255,0.4); }
+        .profile-block { margin-bottom: 20px; }
+        .block-serif-title { font-family: 'DM Serif Display', serif; font-size: 2rem; font-weight: 400; margin-bottom: 25px; line-height: 1.3; color: var(--van-dyke); }
+        .profile-text-left p { margin-bottom: 20px; color: var(--van-dyke); opacity: 0.9; font-size: 1.05rem; }
+
+        .values-card-minimal { border: 1px solid var(--border-soft); background-color: #ffffff; padding: 40px; border-radius: 20px; box-shadow: var(--shadow-premium); }
+        .values-card-minimal h4 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; color: var(--van-dyke); border-bottom: 1px solid var(--border-soft); padding-bottom: 10px; }
+        .values-card-minimal ul { list-style: none; }
+        .values-card-minimal li { margin-bottom: 18px; font-size: 1rem; color: var(--van-dyke); opacity: 0.9; line-height: 1.5; }
+        .values-card-minimal li span { color: #ffffff; background-color: var(--reseda-green); font-weight: bold; padding: 2px 10px; border-radius: 4px; font-size: 0.85rem; text-transform: uppercase; margin-right: 8px; display: inline-block; letter-spacing: 0.5px; }
+
+        /* BANDE 2 : CHRONOLOGIE CURSUS (VERT RESEDA FONCÉ EXTENSIBLE) */
+        .timeline-section {
+            padding: 90px 0;
+            background-color: var(--reseda-green);
+            color: #ffffff;
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .timeline-section .section-title-container::after {
+            background-color: var(--pink-lavender);
+        }
         
-        /* Utilisation du Reseda Green #6D6943 pour les années */
+        .timeline-section .editorial-title {
+            color: #ffffff;
+        }
+
+        .timeline-section .editorial-subtitle {
+            color: #ffffff;
+            opacity: 0.85;
+        }
+
+        .magazine-timeline { 
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        /* Boîtes cursus individuelles stylisées en blanc pour ressortir sur le vert */
+        .timeline-row { 
+            display: flex; 
+            background-color: #ffffff;
+            padding: 40px; 
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(42, 40, 25, 0.12);
+            color: var(--van-dyke);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-row:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 45px rgba(42, 40, 25, 0.18);
+        }
+
+        /* Badge rose d'accentuation pour l'année/grade */
         .tl-year { 
-            width: 150px; 
+            width: 180px; 
             font-family: 'DM Serif Display', serif; 
             font-style: italic; 
-            font-size: 1.8rem; 
-            color: var(--reseda-green); /* #6D6943 */
-            font-weight: bold; 
+            font-size: 1.6rem; 
+            color: var(--van-dyke); 
+            font-weight: 400; 
+            background-color: var(--pink-lavender);
+            align-self: flex-start;
+            padding: 6px 16px;
+            border-radius: 8px;
+            text-align: center;
+            margin-right: 20px;
+            box-shadow: 0 4px 10px rgba(200, 161, 177, 0.2);
         }
-        .tl-details { flex: 1; }
-        .tl-details h4 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 4px; color: var(--van-dyke); }
-        .tl-details h5 { font-size: 0.9rem; color: var(--reseda-dark); margin-bottom: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-        .tl-details p { font-size: 0.95rem; color: var(--van-dyke); opacity: 0.85; }
 
+        .tl-details { flex: 1; }
+        .tl-details h4 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 6px; color: var(--van-dyke); }
+        .tl-details h5 { font-size: 0.95rem; color: var(--reseda-green); margin-bottom: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .tl-details p { font-size: 1rem; color: var(--van-dyke); opacity: 0.85; line-height: 1.6; }
+
+        /* --- FOOTER --- */
         footer {
             background-color: #ffffff;
             border-top: 1px solid var(--border-soft);
             padding: 60px 20px;
-            margin-top: 100px;
         }
 
         .footer-inner {
@@ -247,6 +289,7 @@
             letter-spacing: 1px;
             font-weight: 700;
             opacity: 0.8;
+            transition: all 0.3s ease;
         }
 
         .footer-links a:hover {
@@ -261,6 +304,7 @@
             letter-spacing: 0.5px;
         }
 
+        /* --- RESPONSIVE MOBILE SÉCURISÉ --- */
         @media (max-width: 900px) {
             .header-inner { 
                 flex-direction: row; 
@@ -293,9 +337,11 @@
             }
             nav ul.nav-active { right: 0; }
             .burger { display: block; }
-            .grid-2 { flex-direction: column; gap: 30px; }
-            .timeline-row { flex-direction: column; gap: 10px; }
-            .tl-year { width: 100%; }
+            .grid-2 { flex-direction: column; gap: 35px; }
+            .about-profile-section { padding: 50px 0; }
+            .timeline-section { padding: 60px 0; }
+            .timeline-row { flex-direction: column; gap: 20px; padding: 30px; }
+            .tl-year { width: 100%; text-align: center; margin-right: 0; }
         }
     </style>
 </head>
@@ -328,7 +374,8 @@
     </header>
 
     <main>
-        <section class="about-belletrist">
+        
+        <section class="about-profile-section">
             <div class="container">
                 <div class="section-title-container">
                     <h2 class="editorial-title">Parcours & Inspirations</h2>
@@ -345,15 +392,23 @@
                         <div class="values-card-minimal">
                             <h4>Valeurs & Objectifs</h4>
                             <ul>
-                                <li><span>Créer</span> : Façonner des contenus haut de gamme et transmédias d'excellence.</li>
-                                <li><span>Transmettre</span> : Rendre les textes et le patrimoine vivants auprès des publics connectés.</li>
-                                <li><span>Valoriser</span> : Mettre en lumière l'architecture, l'histoire et les catalogues éditoriaux.</li>
+                                <li><span>Créer</span> Façonner des contenus haut de gamme et transmédias d'excellence.</li>
+                                <li><span>Transmettre</span> Rendre les textes et le patrimoine vivants auprès des publics connectés.</li>
+                                <li><span>Valoriser</span> Mettre en lumière l'architecture, l'histoire et les catalogues éditoriaux.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h3 class="timeline-main-heading">Cursus Académique & Universitaire</h3>
+        <section class="timeline-section">
+            <div class="container">
+                <div class="section-title-container">
+                    <h2 class="editorial-title">Cursus Académique & Universitaire</h2>
+                    <div class="editorial-subtitle">Mon bagage théorique et technique</div>
+                </div>
+                
                 <div class="magazine-timeline">
                     <div class="timeline-row">
                         <div class="tl-year">Master</div>

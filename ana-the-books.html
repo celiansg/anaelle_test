@@ -135,13 +135,12 @@
             flex: 1;
         }
 
-        /* Petite touche de rose via la fine bordure supérieure sur fond blanc épuré */
         .brand-editorial-header { 
             text-align: center; 
             padding: 50px 20px; 
             background-color: #ffffff; 
             border: 1px solid var(--border-soft); 
-            border-top: 4px solid var(--pink-lavender); /* Ligne décorative rose signature */
+            border-top: 4px solid var(--pink-lavender); 
             margin-bottom: 50px; 
             border-radius: 24px; 
             box-shadow: var(--shadow-premium); 
@@ -156,10 +155,9 @@
         
         .platform-row-badges { display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap; }
         
-        /* Boutons de genres configurés en rose plein avec texte brun contrasté */
         .p-badge { 
-            background-color: var(--pink-lavender); /* Fond plein rose */
-            color: var(--van-dyke); /* Texte brun foncé pour l'accessibilité */
+            background-color: var(--pink-lavender); 
+            color: var(--van-dyke); 
             padding: 8px 22px; 
             font-size: 0.75rem; 
             text-transform: uppercase; 
@@ -176,6 +174,16 @@
         .case-item { margin-bottom: 25px; }
         .case-item h5 { font-size: 0.95rem; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; color: var(--reseda-green); letter-spacing: 0.5px; }
         .case-item p { font-size: 0.95rem; color: var(--van-dyke); opacity: 0.85; }
+
+        /* NOUVEAU STYLE : Ajustements pour la bande de couleur verte du bas */
+        .brand-bottom-section {
+            padding: 80px 0;
+            background-color: var(--reseda-green);
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+        .brand-bottom-section .serif-sub { color: #ffffff; }
+        .brand-bottom-section .brand-explanation p { color: #ffffff; opacity: 0.9; }
 
         footer {
             background-color: #ffffff;
@@ -260,6 +268,7 @@
             nav ul.nav-active { right: 0; }
             .burger { display: block; }
             .grid-2 { flex-direction: column; gap: 30px; }
+            .brand-bottom-section { padding: 50px 0; }
         }
     </style>
 </head>
@@ -299,7 +308,11 @@
                     <h1 class="brand-title-serif">Ana & The Books</h1>
                     <div class="brand-divider"></div>
                 </div>
+            </div>
+        </section>
 
+        <section class="brand-bottom-section">
+            <div class="container">
                 <div class="grid-2 brand-body">
                     <div class="brand-explanation">
                         <h2 class="serif-sub">Création de contenu autour du livre & stratégie média</h2>

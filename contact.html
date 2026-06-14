@@ -126,13 +126,12 @@
             transition: 0.3s;
         }
 
-        /* Petite touche de rose via la bordure supérieure de l'en-tête de section */
         .section-title-container {
             text-align: center;
             padding: 40px 20px 20px 20px;
             background-color: #ffffff;
             border: 1px solid var(--border-soft);
-            border-top: 4px solid var(--pink-lavender); /* Ligne rose décorative subtile */
+            border-top: 4px solid var(--pink-lavender);
             border-radius: 24px;
             margin-bottom: 50px;
             box-shadow: var(--shadow-premium);
@@ -143,7 +142,7 @@
             display: block;
             width: 50px;
             height: 2px;
-            background-color: var(--reseda-green); /* Intégration du #6D6943 */
+            background-color: var(--reseda-green);
             margin: 20px auto 0 auto;
         }
 
@@ -164,13 +163,12 @@
             font-weight: 700;
         }
 
-        /* Transformation du bouton principal en rose plein avec écriture brune */
         .btn-editorial {
             display: inline-block;
             padding: 14px 28px;
             border: 1px solid rgba(72, 55, 47, 0.1);
-            background: var(--pink-lavender); /* Fond plein rose */
-            color: var(--van-dyke); /* Texte brun contrasté */
+            background: var(--pink-lavender);
+            color: var(--van-dyke);
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -199,34 +197,40 @@
             flex: 1;
         }
 
+        /* NOUVEAU STYLE : Ajustements et enveloppe pour la grande bande verte du bas */
+        .contact-bottom-section {
+            padding: 80px 0;
+            background-color: var(--reseda-green);
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+
         .contact-layout-box { display: flex; gap: 50px; }
-        .form-side-left { flex: 1.3; background: #ffffff; border: 1px solid var(--border-soft); padding: 40px; border-radius: 24px; box-shadow: var(--shadow-premium); }
+        .form-side-left { flex: 1.3; background: #ffffff; border: 1px solid var(--border-soft); padding: 40px; border-radius: 24px; box-shadow: var(--shadow-premium); color: var(--van-dyke); }
         
-        /* Application d'un fond transparent rose lavande très discret pour le bloc de droite */
-        .details-side-right { flex: 1; background-color: rgba(200, 161, 177, 0.08); border: 1px solid var(--border-soft); padding: 40px; border-radius: 24px; }
+        /* Adaptation des couleurs du bloc de droite pour s'intégrer sur le fond vert */
+        .details-side-right { flex: 1; background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); padding: 40px; border-radius: 24px; color: #ffffff; }
 
         .eb-input-group { margin-bottom: 25px; }
         .eb-input-group label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 8px; color: var(--van-dyke); }
         .eb-input-group input, .eb-input-group textarea { width: 100%; padding: 14px; border: 1px solid var(--border-soft); background: var(--isabelline); font-family: 'Arial Nova', sans-serif; font-size: 0.95rem; color: var(--van-dyke); border-radius: 12px; transition: all 0.3s; }
         .eb-input-group input:focus, .eb-input-group textarea:focus { outline: none; border-color: var(--reseda-green); background: #ffffff; box-shadow: 0 0 0 3px rgba(109, 105, 67, 0.1); }
 
-        .side-title-serif { font-family: 'DM Serif Display', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 12px; color: var(--van-dyke); }
-        .side-desc { font-size: 0.95rem; color: var(--van-dyke); opacity: 0.8; margin-bottom: 30px; }
+        .side-title-serif { font-family: 'DM Serif Display', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 12px; color: #ffffff; }
+        .side-desc { font-size: 0.95rem; color: #ffffff; opacity: 0.85; margin-bottom: 30px; }
         .contact-curated-list { list-style: none; }
-        .contact-curated-list li { font-size: 0.95rem; color: var(--van-dyke); margin-bottom: 15px; border-bottom: 1px solid rgba(72,55,47,0.08); padding-bottom: 10px; font-weight: bold; }
+        .contact-curated-list li { font-size: 0.95rem; color: #ffffff; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 10px; font-weight: bold; }
         
-        /* Utilisation du Reseda Green pour les sous-titres de canaux */
-        .contact-curated-list li span { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--reseda-green); font-weight: 700; margin-bottom: 2px; }
+        .contact-curated-list li span { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--pink-lavender); font-weight: 700; margin-bottom: 2px; }
 
-        .seo-curated-tags { margin-top: 40px; background: rgba(255,255,255,0.6); padding: 20px; border-radius: 12px; border: 1px solid var(--border-soft); }
-        .seo-curated-tags h5 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--van-dyke); margin-bottom: 8px; font-weight: 700; }
-        .seo-curated-tags p { font-size: 0.85rem; font-style: italic; color: var(--van-dyke); opacity: 0.75; line-height: 1.5; }
+        .seo-curated-tags { margin-top: 40px; background: rgba(255,255,255,0.08); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+        .seo-curated-tags h5 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #ffffff; margin-bottom: 8px; font-weight: 700; }
+        .seo-curated-tags p { font-size: 0.85rem; font-style: italic; color: #ffffff; opacity: 0.8; line-height: 1.5; }
 
         footer {
             background-color: #ffffff;
             border-top: 1px solid var(--border-soft);
             padding: 60px 20px;
-            margin-top: 100px;
         }
 
         .footer-inner {
@@ -305,6 +309,7 @@
             nav ul.nav-active { right: 0; }
             .burger { display: block; }
             .contact-layout-box { flex-direction: column; gap: 30px; }
+            .contact-bottom-section { padding: 50px 0; }
         }
     </style>
 </head>
@@ -343,7 +348,11 @@
                     <h2 class="editorial-title">Correspondance & Échanges</h2>
                     <div class="editorial-subtitle">Initialiser une collaboration</div>
                 </div>
+            </div>
+        </section>
 
+        <section class="contact-bottom-section">
+            <div class="container">
                 <div class="grid-2 contact-layout-box">
                     <div class="form-side-left">
                         <form id="ebContactFormM3" onsubmit="submitM3Contact(event)">

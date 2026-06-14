@@ -126,13 +126,12 @@
             transition: 0.3s;
         }
 
-        /* Petite touche de rose via la bordure supérieure de l'en-tête de section */
         .section-title-container {
             text-align: center;
             padding: 40px 20px 20px 20px;
             background-color: #ffffff;
             border: 1px solid var(--border-soft);
-            border-top: 4px solid var(--pink-lavender); /* Ligne décorative rose subtile */
+            border-top: 4px solid var(--pink-lavender);
             border-radius: 24px;
             margin-bottom: 50px;
             box-shadow: var(--shadow-premium);
@@ -143,7 +142,7 @@
             display: block;
             width: 50px;
             height: 2px;
-            background-color: var(--reseda-green); /* Intégration du #6D6943 */
+            background-color: var(--reseda-green);
             margin: 20px auto 0 auto;
         }
 
@@ -173,24 +172,31 @@
             flex: 1;
         }
 
+        /* NOUVEAU STYLE : Ajustements et enveloppe pour la grande bande verte du flux */
+        .blog-bottom-section {
+            padding: 80px 0;
+            background-color: var(--reseda-green);
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+
         .blog-magazine-layout { display: flex; gap: 50px; }
         .left-posts-feed { flex: 1.8; }
         .right-magazine-sidebar { flex: 1; }
 
-        .magazine-article-preview { background-color: #ffffff; border: 1px solid var(--border-soft); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: var(--shadow-premium); transition: all 0.3s ease; }
-        .magazine-article-preview:hover { border-color: rgba(72, 55, 47, 0.3); }
+        .magazine-article-preview { background-color: #ffffff; border: 1px solid var(--border-soft); padding: 40px; margin-bottom: 30px; border-radius: 20px; box-shadow: var(--shadow-premium); transition: all 0.3s ease; color: var(--van-dyke); }
+        .magazine-article-preview:hover { border-color: rgba(72, 55, 47, 0.4); }
         .preview-cat { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--reseda-dark); font-weight: 800; display: block; margin-bottom: 12px; }
         .magazine-article-preview h3 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 15px; line-height: 1.25; color: var(--van-dyke); }
         .magazine-article-preview p { font-size: 0.95rem; color: var(--van-dyke); opacity: 0.85; margin-bottom: 25px; }
         
-        /* Transformation des boutons de flux en boutons roses pleins avec écriture brune */
         .preview-link { 
             font-size: 0.75rem; 
             text-transform: uppercase; 
             letter-spacing: 1.5px; 
             font-weight: 800; 
-            background-color: var(--pink-lavender); /* Fond plein rose */
-            color: var(--van-dyke); /* Écriture brune contrastée */
+            background-color: var(--pink-lavender); 
+            color: var(--van-dyke); 
             text-decoration: none; 
             padding: 10px 24px;
             border: 1px solid rgba(72, 55, 47, 0.1);
@@ -206,34 +212,37 @@
             transform: translateY(-2px);
         }
 
-        /* Touche de rose ajoutée sur la bordure supérieure de la carte latérale */
         .sidebar-sticky-card { 
             background: #ffffff; 
             border: 1px solid var(--border-soft); 
-            border-top: 4px solid var(--pink-lavender); /* Ligne décorative rose subtile */
+            border-top: 4px solid var(--pink-lavender); 
             padding: 30px; 
             position: sticky; 
             top: 120px; 
             border-radius: 20px; 
             box-shadow: var(--shadow-premium); 
+            color: var(--van-dyke);
         }
         .sidebar-sticky-card h4 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 8px; border-bottom: 1px solid var(--border-soft); color: var(--van-dyke); }
         .sb-categories { list-style: none; }
         .sb-categories li { margin-bottom: 15px; }
         .sb-categories a { text-decoration: none; color: var(--van-dyke); font-size: 0.95rem; font-weight: 700; transition: color 0.2s; display: block; }
         .sb-categories a span { display: block; font-size: 0.75rem; color: var(--van-dyke); opacity: 0.6; font-weight: 400; margin-top: 2px; text-transform: none; letter-spacing: 0; }
-        .sb-categories a:hover { color: var(--reseda-green); } /* Passage au vert #6D6943 au survol */
+        .sb-categories a:hover { color: var(--reseda-green); }
 
         footer {
             background-color: #ffffff;
             border-top: 1px solid var(--border-soft);
             padding: 60px 20px;
-            margin-top: 100px;
+        }
+
+        .container-footer {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .footer-inner {
-            max-width: 1140px;
-            margin: 0 auto;
             text-align: center;
         }
 
@@ -309,6 +318,7 @@
             .blog-magazine-layout { flex-direction: column; } 
             .right-magazine-sidebar { order: -1; } 
             .sidebar-sticky-card { position: static; }
+            .blog-bottom-section { padding: 50px 0; }
         }
     </style>
 </head>
@@ -347,8 +357,12 @@
                     <h2 class="editorial-title">Le Magazine Culturel</h2>
                     <div class="editorial-subtitle">Réflexions et analyses universitaires</div>
                 </div>
+            </div>
+        </section>
 
-                <div class="grid-2 blog-magazine-layout">
+        <section class="blog-bottom-section">
+            <div class="container">
+                <div class="blog-magazine-layout">
                     <div class="left-posts-feed">
                         <article class="magazine-article-preview">
                             <span class="preview-cat">Livres / Chroniques et sélections</span>
@@ -382,15 +396,17 @@
     </main>
 
     <footer>
-        <div class="footer-inner">
-            <div class="footer-logo">Anaëlle Seguin Gosselin</div>
-            <div class="footer-links">
-                <a href="https://www.instagram.com/ana_andthebooks/" target="_blank">Instagram</a>
-                <a href="https://www.tiktok.com/@ana_andthebooks" target="_blank">TikTok</a>
-                <a href="https://www.youtube.com/@ana_andthebooks" target="_blank">YouTube</a>
-                <a href="https://www.linkedin.com/in/ana%C3%ABlle-seguin-gosselin-884b09291/" target="_blank">LinkedIn</a>
+        <div class="container-footer">
+            <div class="footer-inner">
+                <div class="footer-logo">Anaëlle Seguin Gosselin</div>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/ana_andthebooks/" target="_blank">Instagram</a>
+                    <a href="https://www.tiktok.com/@ana_andthebooks" target="_blank">TikTok</a>
+                    <a href="https://www.youtube.com/@ana_andthebooks" target="_blank">YouTube</a>
+                    <a href="https://www.linkedin.com/in/ana%C3%ABlle-seguin-gosselin-884b09291/" target="_blank">LinkedIn</a>
+                </div>
+                <p class="footer-copy">&copy; 2026 — Créer, transmettre et valoriser la culture sous toutes ses formes.</p>
             </div>
-            <p class="footer-copy">&copy; 2026 — Créer, transmettre et valoriser la culture sous toutes ses formes.</p>
         </div>
     </footer>
 
